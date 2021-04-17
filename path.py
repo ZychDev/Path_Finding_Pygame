@@ -13,9 +13,8 @@ screen.fill(black)
 #rectangle
 size = 20
 size_rect =int( width / size)
-tmp_x = 0
-tmp_y = 0
-array = [[0 for i in range(size_rect)] for j in range(size_rect)]
+test = 5
+array = [[0 for i in range(test)] for j in range(test)]
 
 #class rectangle
 class point:
@@ -23,34 +22,29 @@ class point:
 		self.x = x 
 		self.y = y 
 		self.color = color
-	def position():
+
+	def position(self):
 		return self.x, self.y
 
-#Array Functions
-def create_array(size, width, height, array):
+#functions
+def create_array(array,width,size_rect,red):
 	x = 0
 	y = 0
-	for i in range(size):
-		for j in range(size):
+	for i in array:
+		for j in i:
 			if y == width:
 				y = 0
-			array[i][j] = point(x, y, red)
-			y += 20
-		x += 20	
-def draw_array(array, size, screen):
-	for i in range(size):
-		for j in range(size):
-			pygame.draw.rect(screen, array[i][j].color, (array[i][j].x, array[i][j].y, 20, 20),1)
-	
+				print(hello)
+			else:
+				j = point(x,y,red)
+				print(j.x , j.x)
+				y += 20
 
-def show_array(array):
-	for x in array:
-		print(x)
 
 
 #main loop
-create_array(size, width, height, array)
-draw_array(array, size, screen)
+
+create_array(array, width, test, red)
 
 start = True
 while start:
